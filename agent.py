@@ -21,6 +21,7 @@ class Agent:
     def __init__(self):
         self.flappybird = FlappyBird()
         self.theoryManager = TheoryManager()
+        self.lastNTheories = []
         # self.turnsSinceHoldKey = 0
 
 
@@ -70,20 +71,30 @@ class Agent:
         starting = True
         lastTheory = None
         turnsDeadCounter = 0
+        turns = 0
         while True:
             self.flappybird.eachCycle()
             if not starting and turnsDeadCounter == 0:
-                self.theoryManager.verifyTheory(lastTheory, self.flappybird.getWorldPositionObjects(), self.flappybird.getBirdVelocity(), self.flappybird.counter, self.flappybird.isDead())
+                self.theoryManager.verifyTheory(lastTheory, self.flappybird.getWorldPositionObjects(), self.flappybird.getBirdVelocity(), self.flappybird.counter, self.flappybird.isDead(), turns)
                 if self.flappybird.isDead():
                     turnsDeadCounter = 1
             else:
                 starting = False
 
             if not self.flappybird.isDead():
-                theory = self.theoryManager.getTheory(self.flappybird.getWorldPositionObjects(), self.flappybird.getBirdVelocity(), self.flappybird.counter)
+                theory = self.theoryManager.getTheory(self.flappybird.getWorldPositionObjects(), self.flappybird.getBirdVelocity(), self.flappybird.counter, turns)
                 self.printTheory(theory)
+                self.setLastTheory(theory)
                 lastTheory = theory     
                 self.act(theory)
                 turnsDeadCounter = 0
+                turns += 1
+            # if self.flappybird.isDead():
+            #     name = input("enter name")
             
+    def setLastTheory(self, theory):
+        self.lastNTheories.append(theory)
+        if (len(self.lastNTheories) > 45):
+            self.lastNTheories.pop(0)
+
 

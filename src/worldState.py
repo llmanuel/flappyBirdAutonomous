@@ -1,9 +1,12 @@
+from src.distance import Zones
+
 class WorldState:
     def __init__(self, inGapHeight, crossingTheGap, farAwayFormWall, distanceToGap, velocity, currentPositions, counter, isDead = None):
         self.inGapHeight = inGapHeight
         self.crossingTheGap = crossingTheGap
         self.farAwayFormWall = farAwayFormWall
         self.distanceToGap = distanceToGap
+        self.zone = Zones().getZoneAccordingToWalls(currentPositions)
         self.isDead = isDead
         self.counter = counter
         self.velocity = velocity
@@ -18,6 +21,7 @@ class WorldState:
                 self.farAwayFormWall == other.farAwayFormWall and
                 (self.distanceToGap > 0) == (other.distanceToGap > 0) and
                 self.isDead == other.isDead and
+                self.zone == other.zone and
                 self.similarVelocity(other) # chequear esto
                 # and self.counter == other.counter no se si necesito esto
             )

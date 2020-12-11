@@ -29,6 +29,7 @@ class FlappyBird:
         self.offset = random.randint(-110, 110)
         self.isKeyDown = False
         self.birdVelocity = None
+        self.clockDisplay = None
         
 
     def updateWalls(self):
@@ -69,7 +70,7 @@ class FlappyBird:
          return self.worldPositions
 
     def isDead(self):
-        return self.dead or not (0 < self.bird[1] < 720)
+        return self.dead or (not (0 < self.bird[1] < 720))
 
     def getBirdVelocity(self):
         return self.birdVelocity
@@ -146,11 +147,13 @@ class FlappyBird:
         pygame.display.update()
         self.clock = clock        
         self.font = font
+        self.clockDisplay = clock
 
     def initGame(self):
         self.clock = pygame.time.Clock()
         pygame.font.init()
         self.font = pygame.font.SysFont("Arial", 50)
+        self.clockDisplay = pygame.font.SysFont("Arial", 50)
     
     def run(self):        
         self.initGame()

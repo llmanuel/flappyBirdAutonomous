@@ -1,9 +1,10 @@
 import pygame
 from src.worldState import WorldState
 from src.utilityCalculator import UtilityCalculator
+from src.distance import Distance
 
-CRITICAL_DISTANCE = 120
-
+CRITICAL_DISTANCE = 180
+DANGER_DISTANCE = 60
 class Theory:
     def __init__(self, currentPositions, velocity, counter, action):
         self.currentWorldState = WorldState(
@@ -48,9 +49,11 @@ class Theory:
             counter,
             isDead
         )
-        self.utility = UtilityCalculator(self.currentWorldState, self.expectedResult).getUtility()
+        self.utility = UtilityCalculator(self.currentWorldState, self.expectedResult, self.action).getUtility()
 
     def verifyResult(self, worldResultPositions, velocity, counter, isDead):
+        if self.action == 'holdKey' and self.calculateDistanceToGap(worldResultPositions) < self.currentWorldState.distanceToGap:
+            isDead = True
         if not self.expectedResult:
             self.setExpectedResult(worldResultPositions, velocity, counter, isDead)
             return True
@@ -65,40 +68,39 @@ class Theory:
                 counter,
                 isDead
             )
-            newUtility = UtilityCalculator(self.currentWorldState, worldResult).getUtility()
+            newUtility = UtilityCalculator(self.currentWorldState, worldResult, self.action).getUtility()
             # comparar resultados
             self.useCount += 1
-            if worldResult == self.expectedResult and newUtility >= self.utility:
+            if worldResult == self.expectedResult and newUtility == self.utility:
                 self.successCount += 1
                 return True
             else:
                 return False # crear una nueva teoria si retorna False
 
     def getTheoryValue(self):
-        if not self.useCount:
+        if not self.useCount or self.useCount < 5:
             return self.utility
         
         return self.utility * (self.successCount / self.useCount)
     
     def isInTheGapHeight(self, currentPositions):
         birdPosition = pygame.Rect(currentPositions[2])
-        topWallPosition = pygame.Rect([birdPosition.left, *currentPositions[1][-3:]])
-        bottomWallPosition = pygame.Rect([birdPosition.left, *currentPositions[0][-3:]])
+        topWallPosition = pygame.Rect([birdPosition.left, currentPositions[1][1] + 20, *currentPositions[1][-2:]])
+        bottomWallPosition = pygame.Rect([birdPosition.left, currentPositions[0][1] - 20, *currentPositions[0][-2:]])
         
         return not bool(topWallPosition.colliderect(birdPosition)) and not bool(bottomWallPosition.colliderect(birdPosition))
         
     def calculateDistanceToGap(self, currentPositions):
-        if (self.isInTheGapHeight(currentPositions)):
-            return 0
+        birdPosition = pygame.Rect(currentPositions[2])
+        topWallPosition = pygame.Rect([birdPosition.left, *currentPositions[1][-3:]])
+        bottomWallPosition = pygame.Rect([birdPosition.left, *currentPositions[0][-3:]])
+        gapCenter = int((bottomWallPosition.top + topWallPosition.bottom) / 2) + 10
+        if (gapCenter > birdPosition.bottom):
+            return gapCenter - birdPosition.bottom
+        elif (gapCenter < birdPosition.top):
+            return gapCenter - birdPosition.top # si me paso es negativo
         else:
-            birdPosition = pygame.Rect(currentPositions[2])
-            topWallPosition = pygame.Rect([birdPosition.left, *currentPositions[1][-3:]])
-            bottomWallPosition = pygame.Rect([birdPosition.left, *currentPositions[0][-3:]])
-            gapCenter = int((bottomWallPosition.top + topWallPosition.bottom) / 2)
-            if (topWallPosition.colliderect(birdPosition)):
-                return gapCenter - birdPosition.top
-            else:
-                return gapCenter - birdPosition.bottom
+            return 0
 
     def isCrossingTheGap(self, currentPositions):
         wallsPosition = pygame.Rect(currentPositions[1][0], 0, 90, 720)
@@ -109,10 +111,16 @@ class Theory:
         return (not bool(topWallPosition.colliderect(birdPosition)) or not bool(bottomWallPosition.colliderect(birdPosition))) and bool(wallsPosition.colliderect(birdPosition))
         
     def isFarAwayFormWall(self, currentPositions):
-        leftSideOfWall = currentPositions[1][0]
-        rightSideOfBird = currentPositions[2][0] + currentPositions[2][2]
+        leftSideOfWall = int(currentPositions[1][0])
+        rightSideOfBird = int(currentPositions[2][0] + currentPositions[2][2])
 
-        return CRITICAL_DISTANCE < leftSideOfWall - rightSideOfBird
+        print(f"Distance to wall: {leftSideOfWall - rightSideOfBird}")
+        if CRITICAL_DISTANCE < leftSideOfWall - rightSideOfBird:
+            return Distance.SAFE
+        elif CRITICAL_DISTANCE > leftSideOfWall - rightSideOfBird > DANGER_DISTANCE:
+            return Distance.CAREFUL
+        else:
+            return Distance.DANGER
 
 
 
