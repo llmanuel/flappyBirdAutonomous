@@ -1,0 +1,67 @@
+import json
+import numpy as np
+from src.theory import Theory
+
+class TheoryDb:
+  FILE_PATH = '/Users/mllauro/Facultad/Celdas/Tp-1/flappyBirdAutonomous/src/theories.json'
+
+  def __init__(self):
+    self.jsonTheories = {}
+    self.jsonTheories['theories'] = []
+
+  def theoryToJson(self, theory):
+    currentWorldState = theory.currentWorldState
+    expectedResult = theory.expectedResult
+    currentPositionsForCurrentWorld = currentWorldState.currentPositions
+    currentPositionsForExpectedResult = expectedResult.currentPositions
+
+    if isinstance(currentPositionsForCurrentWorld, np.ndarray):
+      currentPositionsForCurrentWorld = currentPositionsForCurrentWorld.tolist()
+    if isinstance(currentPositionsForExpectedResult, np.ndarray):
+      currentPositionsForExpectedResult = currentPositionsForExpectedResult.tolist()
+
+    self.jsonTheories['theories'].append({
+      'currentWorldState': {
+        'zone': currentWorldState.zone,
+        'isDead': currentWorldState.isDead,
+        'velocity': currentWorldState.velocity,
+        'currentPositions': currentPositionsForCurrentWorld,
+        'inGapHeight': currentWorldState.inGapHeight,
+        'crossingTheGap': currentWorldState.crossingTheGap,
+        'farAwayFormWall': currentWorldState.farAwayFormWall,
+        'distanceToGap': currentWorldState.distanceToGap,
+        'counter': currentWorldState.counter,
+      },
+      'expectedResult':  {
+        'zone': expectedResult.zone,
+        'isDead': expectedResult.isDead,
+        'velocity': expectedResult.velocity,
+        'currentPositions': currentPositionsForExpectedResult,
+        'inGapHeight': expectedResult.inGapHeight,
+        'crossingTheGap': expectedResult.crossingTheGap,
+        'farAwayFormWall': expectedResult.farAwayFormWall,
+        'distanceToGap': expectedResult.distanceToGap,
+        'counter': expectedResult.counter,
+      },
+      'action': theory.action,
+      'successCount': theory.successCount,
+      'useCount': theory.useCount,
+      'utility': theory.utility,
+    })
+
+  def saveTheories(self, theories):
+    for i, theory in enumerate(theories):
+      if theory.isComplete():
+        self.theoryToJson(theory)
+
+    with open(TheoryDb.FILE_PATH, 'w') as outfile:
+      json.dump(self.jsonTheories, outfile, indent = 2)
+
+  def fetchTheories(self):
+    savedTheories = []
+    with open(TheoryDb.FILE_PATH, 'r') as jsonFile:
+      data = json.load(jsonFile)
+      for jsonTheory in data['theories']:
+        savedTheories.append(Theory(jsonTheory['currentWorldState']['currentPositions'], jsonTheory['currentWorldState']['velocity'], jsonTheory['currentWorldState']['counter'], jsonTheory['action'], jsonTheory = jsonTheory))
+
+    return savedTheories

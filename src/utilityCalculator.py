@@ -46,6 +46,11 @@ class UtilityCalculator:
                     return 4
                 else:
                     return -1
+            elif self.worldResult.zone == Zones.GAP_DANGER:
+                if self.isVelocityHelping(self.action):
+                    return 7
+                else:
+                    return -3
             else:
                 return 1
         else:
@@ -163,7 +168,11 @@ class UtilityCalculator:
                 return True
             elif action == Actions.HOlD_KEY and self.worldResult.zone == Zones.GAP_BOTTOM:
                 return True
-            elif -8 < self.worldResult.velocity < 8:
+            elif action == Actions.RELEASE_KEY and self.worldResult.zone == Zones.GAP_DANGER:
+                return False
+            elif action == Actions.HOlD_KEY and self.worldResult.zone == Zones.GAP_DANGER:
+                return True
+            elif -4 < self.worldResult.velocity < 4:
                 return True
             else:
                 return False

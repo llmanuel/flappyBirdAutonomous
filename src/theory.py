@@ -6,21 +6,49 @@ from src.distance import Distance
 CRITICAL_DISTANCE = 180
 DANGER_DISTANCE = 60
 class Theory:
-    def __init__(self, currentPositions, velocity, counter, action):
-        self.currentWorldState = WorldState(
-            self.isInTheGapHeight(currentPositions),
-            self.isCrossingTheGap(currentPositions),
-            self.isFarAwayFormWall(currentPositions),
-            self.calculateDistanceToGap(currentPositions),
-            velocity,
-            currentPositions,
-            counter
-        )
-        self.action = action
-        self.expectedResult = None
-        self.successCount = 0
-        self.useCount = 0
-        self.utility = None
+    def __init__(self, currentPositions, velocity, counter, action, jsonTheory = None):
+        if (jsonTheory is None):
+            self.currentWorldState = WorldState(
+                self.isInTheGapHeight(currentPositions),
+                self.isCrossingTheGap(currentPositions),
+                self.isFarAwayFormWall(currentPositions),
+                self.calculateDistanceToGap(currentPositions),
+                velocity,
+                currentPositions,
+                counter
+            )
+            self.action = action
+            self.expectedResult = None
+            self.successCount = 0
+            self.useCount = 0
+            self.utility = None
+        else:
+            jsonCurrentWorldState = jsonTheory['currentWorldState']
+            jsonExpectedResult = jsonTheory['expectedResult']
+            self.currentWorldState = WorldState(
+                jsonCurrentWorldState['inGapHeight'],
+                jsonCurrentWorldState['crossingTheGap'],
+                jsonCurrentWorldState['farAwayFormWall'],
+                jsonCurrentWorldState['distanceToGap'],
+                jsonCurrentWorldState['velocity'],
+                jsonCurrentWorldState['currentPositions'],
+                jsonCurrentWorldState['counter'],
+                jsonCurrentWorldState['isDead']
+            )
+            self.action = jsonTheory['action']
+            self.expectedResult = WorldState(
+                jsonExpectedResult['inGapHeight'],
+                jsonExpectedResult['crossingTheGap'],
+                jsonExpectedResult['farAwayFormWall'],
+                jsonExpectedResult['distanceToGap'],
+                jsonExpectedResult['velocity'],
+                jsonExpectedResult['currentPositions'],
+                jsonExpectedResult['counter'],
+                jsonExpectedResult['isDead']
+            )
+            self.successCount = jsonTheory['successCount']
+            self.useCount = jsonTheory['useCount']
+            self.utility = jsonTheory['utility']
 
     def __eq__(self, other):
         """Overrides the default implementation"""
@@ -97,13 +125,14 @@ class Theory:
         birdPosition = pygame.Rect(currentPositions[2])
         topWallPosition = pygame.Rect([birdPosition.left, *currentPositions[1][-3:]])
         bottomWallPosition = pygame.Rect([birdPosition.left, *currentPositions[0][-3:]])
-        gapCenter = int((bottomWallPosition.top + topWallPosition.bottom) / 2) + 10
-        if (gapCenter > birdPosition.bottom):
-            return gapCenter - birdPosition.bottom
-        elif (gapCenter < birdPosition.top):
-            return gapCenter - birdPosition.top # si me paso es negativo
+        
+        if (bottomWallPosition.top < birdPosition.bottom):
+            return bottomWallPosition.top + 15 - birdPosition.bottom # el punto mas lejano del pajaro
+        elif (bottomWallPosition.top > birdPosition.bottom):
+            return bottomWallPosition.top + 15 - birdPosition.bottom # el punto mas lejano del pajaro
         else:
             return 0
+
 
     def isCrossingTheGap(self, currentPositions):
         wallsPosition = pygame.Rect(currentPositions[1][0], 0, 90, 720)
@@ -126,6 +155,8 @@ class Theory:
             return Distance.DANGER
 
 
+    def isComplete(self):
+        return self.currentWorldState and self.action and self.expectedResult and self.utility is not None
 
         # distancia en x a los tubos -> dado un X si x > X no es tan grave. Si x < X todo importa mas
         # 1. Estoy chocando el tubo de arriba

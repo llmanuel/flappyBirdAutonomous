@@ -4,10 +4,17 @@ import numpy as np
 from src.actions import Actions
 from src.theory import Theory
 from src.distance import Distance
+from src.theoryDb import TheoryDb
 
 class TheoryManager:
     def __init__(self):
         self.theoryList = []
+
+    def loadSavedTheories(self):
+        self.theoryList = TheoryDb().fetchTheories()
+
+    def saveTheories(self):
+        TheoryDb().saveTheories(self.theoryList)
 
     def getTheoriesForSituation(self, newTheory, turns):
         # read theories and check for one similar to this situation
@@ -93,7 +100,7 @@ class TheoryManager:
         if self.theoryList[index].utility is None:
             n = input("algo raro gato")
         removed = self.removeTheoryIfDeadByCrushingWall(index)
-        print("verify result: ", result)
+        # print("verify result: ", result)
         if not result and not removed:
             lastPositions = self.theoryList[index].currentWorldState.currentPositions
             lastVelocity = self.theoryList[index].currentWorldState.velocity

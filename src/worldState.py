@@ -19,7 +19,7 @@ class WorldState:
                 # self.inGapHeight == other.inGapHeight and
                 # self.crossingTheGap == other.crossingTheGap and
                 # self.farAwayFormWall == other.farAwayFormWall and
-                # (self.distanceToGap > 0) == (other.distanceToGap > 0) and
+                (self.distanceToGap > 0) == (other.distanceToGap > 0) and
                 self.isDead == other.isDead and
                 self.zone == other.zone and
                 self.similarVelocity(other) # chequear esto
@@ -28,9 +28,19 @@ class WorldState:
         return False
 
     def similarVelocity(self, other):
-        if (self.velocity > 0) == (other.velocity > 0) and abs(self.velocity - other.velocity) < 0.5:
-            return True
-        elif (self.velocity < 0) == (other.velocity < 0) and abs(self.velocity - other.velocity) < 0.5:
-            return True
-        else:
-            False
+        def isSlowVelocity(vel):
+            if abs(vel) < 4:
+                True
+            else:
+                False
+
+        return isSlowVelocity(self.velocity) == isSlowVelocity(other.velocity)
+
+
+
+        # if (self.velocity > 0) == (other.velocity > 0) and abs(self.velocity - other.velocity) < 0.5:
+        #     return True
+        # elif (self.velocity < 0) == (other.velocity < 0) and abs(self.velocity - other.velocity) < 0.5:
+        #     return True
+        # else:
+        #     False

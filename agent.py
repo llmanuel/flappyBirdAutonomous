@@ -58,13 +58,13 @@ class Agent:
         print("Dead: ", self.flappybird.dead)
 
     def printTheory(self, theory):
-        print(f"{bcolors.OKGREEN}Action: {theory.action}{bcolors.ENDC}")
-        print(f"{bcolors.OKCYAN}Utility: {theory.utility}{bcolors.ENDC}")
-        print(f"{bcolors.OKBLUE}Is far away from wall: {theory.currentWorldState.farAwayFormWall}{bcolors.ENDC}")
+        # print(f"{bcolors.OKGREEN}Action: {theory.action}{bcolors.ENDC}")
+        # print(f"{bcolors.OKCYAN}Utility: {theory.utility}{bcolors.ENDC}")
+        # print(f"{bcolors.OKBLUE}Is far away from wall: {theory.currentWorldState.farAwayFormWall}{bcolors.ENDC}")
         print(f"{bcolors.OKBLUE}Distance To Gap: {theory.currentWorldState.distanceToGap}{bcolors.ENDC}")
-        print(f"{bcolors.OKBLUE}Bird Velocity: {theory.currentWorldState.velocity}{bcolors.ENDC}")
-        print("successCount: ",theory.successCount)
-        print("useCount: ", theory.useCount)
+        # print(f"{bcolors.OKBLUE}Bird Velocity: {theory.currentWorldState.velocity}{bcolors.ENDC}")
+        # print("successCount: ",theory.successCount)
+        # print("useCount: ", theory.useCount)
 
     def run(self):  
         self.flappybird.initGame()
@@ -72,6 +72,7 @@ class Agent:
         lastTheory = None
         turnsDeadCounter = 0
         turns = 0
+        self.theoryManager.loadSavedTheories()
         while True:
             self.flappybird.eachCycle()
             if not starting and turnsDeadCounter == 0:
@@ -89,6 +90,10 @@ class Agent:
                 self.act(theory)
                 turnsDeadCounter = 0
                 turns += 1
+
+            if turns % 10000 == 0:
+                print(f"{bcolors.OKBLUE}Saving theories{bcolors.ENDC}")
+                self.theoryManager.saveTheories()
             # if self.flappybird.isDead():
             #     name = input("enter name")
             

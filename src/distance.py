@@ -12,6 +12,7 @@ class Zones:
   GAP_TOP = 'gapTop'
   GAP_MIDDLE = 'gapMiddle'
   GAP_BOTTOM = 'gapBottom'
+  GAP_DANGER = 'gapDanger'
 
   def __init__(self):
     pass
@@ -29,7 +30,7 @@ class Zones:
     else:
       distance = 0
 
-    # gapZonesSize = gapSize / 3
+    gapLimitDanger = gapSize * 0.2
     gapLimitBottom = gapSize * 0.3
     gapLimitMiddle = gapSize * 0.5
 
@@ -43,11 +44,13 @@ class Zones:
       return Zones.GAP_TOP
     elif gapLimitMiddle >= distance > gapLimitBottom:
       return Zones.GAP_MIDDLE
-    elif gapLimitBottom >= distance >= 0:
+    elif gapLimitBottom >= distance > gapLimitDanger:
       return Zones.GAP_BOTTOM
+    elif gapLimitDanger >= distance >= 0:
+      return Zones.GAP_DANGER
     else:
       n = input("hola wacho")
       print(n)
 
   def inGapZones(self, zone):
-    return zone == Zones.GAP_TOP or zone == Zones.GAP_MIDDLE or zone == Zones.GAP_BOTTOM
+    return zone == Zones.GAP_TOP or zone == Zones.GAP_MIDDLE or zone == Zones.GAP_BOTTOM or zone == Zones.GAP_DANGER
