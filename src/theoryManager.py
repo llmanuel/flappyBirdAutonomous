@@ -31,23 +31,31 @@ class TheoryManager:
         if len(theoriesForCurrentSituation) == 0:
             self.theoryList.append(newTheory)
             selectedTheory = newTheory
-        elif thereIsHoldKey and thereIsRelease:
-            maxValueTheory = max(theoriesForCurrentSituation, key=lambda theory: theory.getTheoryValue())
-            if (maxValueTheory.getTheoryValue() < 0) and random.randint(0, 10) < 1 * abs(maxValueTheory.utility):
-                selectedTheory = self.explore(newTheory, self.newTheoryIsABadTheory(newTheory, maxValueTheory) and newTheory.getAction() == maxValueTheory.getAction())
-            # if (maxValueTheory.getTheoryValue() < 0):
-                # if turns > 20000: 
-                #     name = input("Enter your name: ")
-            #     selectedTheory = self.explore(newTheory, self.newTheoryIsABadTheory(newTheory, maxValueTheory) and newTheory.getAction() == maxValueTheory.getAction())
-            # elif (maxValueTheory.getTheoryValue() == 0):
-            #     selectedTheory = self.explore(newTheory, random.randint(0, 10) > 4)
-            else:
-                selectedTheory = maxValueTheory
-        elif ((thereIsHoldKey and not thereIsRelease) or (not thereIsHoldKey and thereIsRelease)) and random.randint(0, 10) <= 4:
-            selectedTheory = self.explore(newTheory, self.newTheoryIsABadTheory(newTheory, max(theoriesForCurrentSituation, key=lambda theory: theory.getTheoryValue())))
         else:
             maxValueTheory = max(theoriesForCurrentSituation, key=lambda theory: theory.getTheoryValue())
-            selectedTheory = self.explore(newTheory, self.newTheoryIsABadTheory(newTheory, maxValueTheory) or (maxValueTheory.getTheoryValue() == 0 and random.randint(0, 10) > 4))
+            if thereIsHoldKey and thereIsRelease:
+                if (maxValueTheory.getTheoryValue() < 0):
+                    selectedTheory = self.explore(newTheory, self.newTheoryIsABadTheory(newTheory, maxValueTheory) and newTheory.getAction() == maxValueTheory.getAction())  
+                elif (maxValueTheory.getTheoryValue() < 1) and random.randint(0, 10) < 4 * abs(maxValueTheory.utility):
+                    selectedTheory = self.explore(newTheory, self.newTheoryIsABadTheory(newTheory, maxValueTheory) and newTheory.getAction() == maxValueTheory.getAction())
+                # if (maxValueTheory.getTheoryValue() < 0):
+                    # if turns > 20000: 
+                    #     name = input("Enter your name: ")
+                #     selectedTheory = self.explore(newTheory, self.newTheoryIsABadTheory(newTheory, maxValueTheory) and newTheory.getAction() == maxValueTheory.getAction())
+                # elif (maxValueTheory.getTheoryValue() == 0):
+                #     selectedTheory = self.explore(newTheory, random.randint(0, 10) > 4)
+                else:
+                    selectedTheory = maxValueTheory
+            elif (thereIsHoldKey and not thereIsRelease) and maxValueTheory.getTheoryValue() < 6:
+                newTheory.setAction(Actions.RELEASE_KEY)
+                selectedTheory = newTheory
+                self.theoryList.append(selectedTheory)
+            elif (not thereIsHoldKey and thereIsRelease):
+                newTheory.setAction(Actions.HOlD_KEY)
+                selectedTheory = newTheory
+                self.theoryList.append(selectedTheory)
+            else:
+                selectedTheory = self.explore(newTheory, self.newTheoryIsABadTheory(newTheory, maxValueTheory) or (maxValueTheory.getTheoryValue() == 0 and random.randint(0, 10) > 4))
 
         return selectedTheory
 
@@ -82,18 +90,22 @@ class TheoryManager:
 
         result = self.theoryList[index].verifyResult(worldResultPositions, velocity, counter, isDead)
 
-        self.removeTheoryIfDeadByCrushingWall(index)
+        if self.theoryList[index].utility is None:
+            n = input("algo raro gato")
+        removed = self.removeTheoryIfDeadByCrushingWall(index)
         print("verify result: ", result)
-        if not result:
+        if not result and not removed:
             lastPositions = self.theoryList[index].currentWorldState.currentPositions
             lastVelocity = self.theoryList[index].currentWorldState.velocity
             newTheory = self.createNewTheory(lastPositions, lastVelocity, self.theoryList[index].currentWorldState.counter)
             newTheory.setAction(self.theoryList[index].action)
             newTheory.verifyResult(worldResultPositions, velocity, counter, isDead)
+            if newTheory.utility is None:
+                n = input("algo raro gato3")
             self.theoryList.append(newTheory)
         # cleaning similar or worthless theories
         self.removeUnsuccessfullTheories()
-        if turns % 5000 == 0:
+        if turns % 10000 == 0:
             for i, item in enumerate(self.theoryList):
                 self.mergeSimilarTheoriesTo(item)
 
@@ -103,6 +115,9 @@ class TheoryManager:
         currentWorldState = self.theoryList[index].currentWorldState
         if expectedResult.farAwayFormWall == Distance.SAFE and currentWorldState.farAwayFormWall == Distance.DANGER:
             self.theoryList.pop(index)
+            return True
+        
+        return False
 
     def removeUnsuccessfullTheories(self):
         def successPercentage(theory):

@@ -50,9 +50,12 @@ class Theory:
             isDead
         )
         self.utility = UtilityCalculator(self.currentWorldState, self.expectedResult, self.action).getUtility()
+        if self.utility is None:
+            n = input("algo raro gato2")
+            print(n)
 
     def verifyResult(self, worldResultPositions, velocity, counter, isDead):
-        if self.action == 'holdKey' and self.calculateDistanceToGap(worldResultPositions) < self.currentWorldState.distanceToGap:
+        if self.action == 'holdKey' and (abs(self.calculateDistanceToGap(worldResultPositions)) - abs(self.currentWorldState.distanceToGap) > 15):
             isDead = True
         if not self.expectedResult:
             self.setExpectedResult(worldResultPositions, velocity, counter, isDead)
@@ -114,7 +117,7 @@ class Theory:
         leftSideOfWall = int(currentPositions[1][0])
         rightSideOfBird = int(currentPositions[2][0] + currentPositions[2][2])
 
-        print(f"Distance to wall: {leftSideOfWall - rightSideOfBird}")
+        # print(f"Distance to wall: {leftSideOfWall - rightSideOfBird}")
         if CRITICAL_DISTANCE < leftSideOfWall - rightSideOfBird:
             return Distance.SAFE
         elif CRITICAL_DISTANCE > leftSideOfWall - rightSideOfBird > DANGER_DISTANCE:

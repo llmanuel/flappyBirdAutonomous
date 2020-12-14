@@ -16,10 +16,10 @@ class WorldState:
         """Overrides the default implementation"""
         if isinstance(other, WorldState):
             return (
-                self.inGapHeight == other.inGapHeight and
-                self.crossingTheGap == other.crossingTheGap and
-                self.farAwayFormWall == other.farAwayFormWall and
-                (self.distanceToGap > 0) == (other.distanceToGap > 0) and
+                # self.inGapHeight == other.inGapHeight and
+                # self.crossingTheGap == other.crossingTheGap and
+                # self.farAwayFormWall == other.farAwayFormWall and
+                # (self.distanceToGap > 0) == (other.distanceToGap > 0) and
                 self.isDead == other.isDead and
                 self.zone == other.zone and
                 self.similarVelocity(other) # chequear esto
