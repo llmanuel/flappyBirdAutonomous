@@ -91,7 +91,7 @@ class Agent:
                 turnsDeadCounter = 0
                 turns += 1
 
-            if turns % 10000 == 0:
+            if turns % 50 == 0:
                 print(f"{bcolors.OKBLUE}Saving theories{bcolors.ENDC}")
                 self.theoryManager.saveTheories()
             # if self.flappybird.isDead():

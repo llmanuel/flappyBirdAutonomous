@@ -11,10 +11,6 @@ class UtilityCalculator:
         self.action = action
 
     def getUtility(self):
-        # if self.worldResult.isDead:
-        #     return -8
-        # if self.worldResult.counter > self.currentWorldState.counter:
-        #     return 1000
         if self.worldResult.zone == Zones.FAR:
             if self.isVelocityHelping(self.action):
                 return 1
@@ -57,85 +53,6 @@ class UtilityCalculator:
             m = input("holis")
             print(m)
 
-    
-
-
-    # def getUtility(self):
-    #     if self.worldResult.isDead:
-    #         return -8
-    #     elif self.worldResult.counter > self.currentWorldState.counter:
-    #         return 1000
-    #     elif self.worldResult.farAwayFormWall == Distance.SAFE:
-    #         if self.worldResult.zone == Zones.BORDER and self.isVelocityHelping(self.action):
-    #             return 3
-    #         elif self.worldResult.zone == Zones.MIDDLE and self.isVelocityHelping(self.action):
-    #             return 2
-    #         elif abs(self.worldResult.distanceToGap) < abs(self.currentWorldState.distanceToGap):
-    #             return 1
-    #         elif self.isVelocityHelping(self.action):
-    #             return 1
-    #         else:
-    #             return -1
-    #     elif self.worldResult.farAwayFormWall == Distance.CAREFUL:
-    #         if self.worldResult.zone == Zones.MIDDLE and self.isVelocityHelping(self.action):
-    #             return 1
-    #         elif self.worldResult.zone == Zones.MIDDLE and not self.isVelocityHelping(self.action):
-    #             return -4
-    #         elif not self.worldResult.inGapHeight and self.worldResult.zone == Zones.BORDER and self.isVelocityHelping(self.action):
-    #             return 2
-    #         elif not self.worldResult.inGapHeight and self.worldResult.zone == Zones.BORDER and not self.isVelocityHelping(self.action):
-    #             return -1
-    #         elif self.worldResult.inGapHeight:
-    #             if self.worldResult.zone == Zones.GAP_BOTTOM and self.isVelocityHelping(self.action):
-    #                 return 5
-    #             elif self.worldResult.zone == Zones.GAP_MIDDLE and self.isVelocityHelping(self.action):
-    #                 return 4
-    #             elif self.worldResult.zone == Zones.GAP_TOP and self.isVelocityHelping(self.action):
-    #                 return 2
-    #             elif not self.isVelocityHelping(self.action):
-    #                 return 0
-    #             else:
-    #                 return 1
-    #         elif self.worldResult.zone == Zones.FAR and self.isVelocityHelping(self.action): # if zone is far
-    #             return -3
-    #         elif self.worldResult.zone == Zones.FAR and not self.isVelocityHelping(self.action):
-    #             return -5
-    #     elif self.worldResult.crossingTheGap:
-    #         # ver de ir sumando puntos si voy mas al medio y eso
-    #         if self.worldResult.zone == Zones.GAP_BOTTOM and self.isVelocityHelping(self.action):
-    #             return 10
-    #         elif self.worldResult.zone == Zones.GAP_MIDDLE and self.isVelocityHelping(self.action):
-    #             return 7
-    #         elif self.worldResult.zone == Zones.GAP_TOP and self.isVelocityHelping(self.action):
-    #             return 4
-    #         elif not self.isVelocityHelping(self.action):
-    #             return 0
-    #         else:
-    #             return 2
-    #     elif self.worldResult.farAwayFormWall == Distance.DANGER:
-    #         if self.worldResult.zone == Zones.MIDDLE and self.isVelocityHelping(self.action):
-    #             return -2
-    #         elif self.worldResult.zone == Zones.FAR and not self.isVelocityHelping(self.action):
-    #             return -8
-    #         if self.worldResult.zone == Zones.BORDER and self.isVelocityHelping(self.action):
-    #             return 2
-    #         elif self.worldResult.zone == Zones.BORDER and not self.isVelocityHelping(self.action):
-    #             return -8
-    #         # elif not self.worldResult.inGapHeight and abs(self.worldResult.distanceToGap) < 20 and self.isVelocityHelping(self.action):
-    #         #     return 2
-    #         # elif not self.worldResult.inGapHeight:
-    #         #     return -8
-    #         elif self.worldResult.inGapHeight:
-    #             if self.worldResult.zone == Zones.GAP_BOTTOM and self.isVelocityHelping(self.action):
-    #                 return 9
-    #             elif self.worldResult.zone == Zones.GAP_MIDDLE and self.isVelocityHelping(self.action):
-    #                 return 7
-    #             elif self.worldResult.zone == Zones.GAP_TOP and self.isVelocityHelping(self.action):
-    #                 return 2
-    #             elif not self.isVelocityHelping(self.action):
-    #                 return 0
-    #             else:
-    #                 return 1
 
     def isVelocityHelping(self, action):
         worldResultPositions = self.worldResult.currentPositions

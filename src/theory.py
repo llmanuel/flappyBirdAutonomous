@@ -60,6 +60,15 @@ class Theory:
             )
         return False
 
+    def similar(self, other):
+        """Overrides the default implementation"""
+        if isinstance(other, Theory):
+            return (
+                self.currentWorldState == other.currentWorldState and
+                self.action == other.action
+            )
+        return False
+
     def getAction(self):
         return self.action
 
