@@ -145,32 +145,40 @@ class UtilityCalculator:
 
         furtherZones = self.worldResult.zone == Zones.FAR or self.worldResult.zone == Zones.MIDDLE or self.worldResult.zone == Zones.BORDER
 
-        if topWallPosition.colliderect(birdPosition):
-            if action == Actions.HOlD_KEY:
+        def isReducingVelocity(currentVel, resultVel):
+            if resultVel <= 0:
+                return True
+            elif currentVel > resultVel:
+                return True
+            else:
                 return False
-            elif furtherZones and action == Actions.RELEASE_KEY:
+            
+        if topWallPosition.colliderect(birdPosition):
+            if not isReducingVelocity(self.currentWorldState.velocity, self.worldResult.velocity):
+                return False
+            elif furtherZones and isReducingVelocity(self.currentWorldState.velocity, self.worldResult.velocity):
                 return True
             elif self.worldResult.velocity < 0 or (self.worldResult.velocity < self.currentWorldState.velocity and self.worldResult.velocity < 5):
                 return True
             else:
                 return False
         elif bottomWallPosition.colliderect(birdPosition):
-            if action == Actions.RELEASE_KEY:
+            if isReducingVelocity(self.currentWorldState.velocity, self.worldResult.velocity):
                 return False
-            if furtherZones and action == Actions.HOlD_KEY:
+            if furtherZones and not isReducingVelocity(self.currentWorldState.velocity, self.worldResult.velocity):
                 return True
             elif self.worldResult.velocity > 0 or (self.worldResult.velocity > self.currentWorldState.velocity and self.worldResult.velocity > -5):
                 return True
             else:
                 return False
         elif self.worldResult.crossingTheGap or Zones().inGapZones(self.worldResult.zone):
-            if action == Actions.RELEASE_KEY and self.worldResult.zone == Zones.GAP_TOP:
+            if isReducingVelocity(self.currentWorldState.velocity, self.worldResult.velocity) and self.worldResult.zone == Zones.GAP_TOP:
                 return True
-            elif action == Actions.HOlD_KEY and self.worldResult.zone == Zones.GAP_BOTTOM:
+            elif not isReducingVelocity(self.currentWorldState.velocity, self.worldResult.velocity) and self.worldResult.zone == Zones.GAP_BOTTOM:
                 return True
-            elif action == Actions.RELEASE_KEY and self.worldResult.zone == Zones.GAP_DANGER:
+            elif isReducingVelocity(self.currentWorldState.velocity, self.worldResult.velocity) and self.worldResult.zone == Zones.GAP_DANGER:
                 return False
-            elif action == Actions.HOlD_KEY and self.worldResult.zone == Zones.GAP_DANGER:
+            elif not isReducingVelocity(self.currentWorldState.velocity, self.worldResult.velocity) and self.worldResult.zone == Zones.GAP_DANGER:
                 return True
             elif -4 < self.worldResult.velocity < 4:
                 return True
