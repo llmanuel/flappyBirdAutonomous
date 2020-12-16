@@ -28,6 +28,8 @@ class FlappyBird:
         self.counter = 0
         self.offset = random.randint(-110, 110)
         self.isKeyDown = False
+        self.birdVelocity = None
+        self.clockDisplay = None
         
 
     def updateWalls(self):
@@ -37,10 +39,10 @@ class FlappyBird:
             self.counter += 1
             self.offset = random.randint(-110, 110)
 
-    def calculateWorldPositionObjets(self):
+    def calculateWorldPositionObjects(self):
         self.worldPositions =  np.array([
                             [self.wallx,
-                             360 + self.gap - self.offset + 10,
+                             360 + self.gap - self.offset,
                              self.wallUp.get_width() - 10,
                              self.wallUp.get_height()
                              ],
@@ -54,12 +56,24 @@ class FlappyBird:
                                   self.bird[1],
                                   self.bird[2],
                                   self.bird[3]
-                              ]
+                              ],
                         ])
         return self.worldPositions
 
-    def getWorldPositionObjets(self):
+    def getJumpSpeed(self):
+        return self.jumpSpeed
+
+    def getGravity(self):
+        return self.gravity
+
+    def getWorldPositionObjects(self):
          return self.worldPositions
+
+    def isDead(self):
+        return self.dead or (not (0 < self.bird[1] < 720))
+
+    def getBirdVelocity(self):
+        return self.birdVelocity
 
     def birdUpdate(self):
         if self.jump:
@@ -69,8 +83,9 @@ class FlappyBird:
         else:
             self.birdY += self.gravity
             self.gravity += 0.2
+        self.birdVelocity = self.bird[1] - self.birdY
         self.bird[1] = self.birdY
-        positions = self.calculateWorldPositionObjets()
+        positions = self.calculateWorldPositionObjects()
         upRect = pygame.Rect(positions[0][0],positions[0][1],positions[0][2],positions[0][3])
         downRect = pygame.Rect(positions[1][0],positions[1][1],positions[1][2],positions[1][3])
         if upRect.colliderect(self.bird):
@@ -97,7 +112,7 @@ class FlappyBird:
         self.gravity = 0
         self.jumpSpeed = 10
 
-    def eachCicle(self):
+    def eachCycle(self):
         clock = self.clock        
         font = self.font
         clock.tick(60)
@@ -132,16 +147,18 @@ class FlappyBird:
         pygame.display.update()
         self.clock = clock        
         self.font = font
+        self.clockDisplay = clock
 
     def initGame(self):
         self.clock = pygame.time.Clock()
         pygame.font.init()
         self.font = pygame.font.SysFont("Arial", 50)
+        self.clockDisplay = pygame.font.SysFont("Arial", 50)
     
     def run(self):        
         self.initGame()
         while True:
-            self.eachCicle()
+            self.eachCycle()
            
 
 if __name__ == "__main__":

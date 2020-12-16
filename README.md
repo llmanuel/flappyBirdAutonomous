@@ -50,3 +50,12 @@ solucion 2:
 solucion 3:
 
 	editar el header del archivo start.py para que tome el comando python3
+
+Observaciones sobre el agente
+=============================
+
+El archivo **theories.json** es donde se guarda el aprendizaje del agente.
+
+Para volver a entrenar el agente reemplazar el contenido de **theories.json** por el de **theories.example.json**.
+
+Para reescribir el archivo  **theories.json** descomentar la linea ```agent.py:91``` 
