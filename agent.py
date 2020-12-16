@@ -22,8 +22,6 @@ class Agent:
         self.flappybird = FlappyBird()
         self.theoryManager = TheoryManager()
         self.lastNTheories = []
-        # self.turnsSinceHoldKey = 0
-
 
     """
      * Method used to determine the next move to be performed by the agent.
@@ -32,7 +30,6 @@ class Agent:
     def act(self, theory): 
         # self.observeworld()
         if theory.action == Actions.HOlD_KEY:
-        # if self.myRandom() == 2:
             self.flappybird.holdKeyDown()
             print(f"{bcolors.FAIL}Action: Hold key down{bcolors.ENDC}")
         else:
@@ -76,14 +73,14 @@ class Agent:
         while True:
             self.flappybird.eachCycle()
             if not starting and turnsDeadCounter == 0:
-                self.theoryManager.verifyTheory(lastTheory, self.flappybird.getWorldPositionObjects(), self.flappybird.getBirdVelocity(), self.flappybird.counter, self.flappybird.isDead(), turns)
+                self.theoryManager.verifyTheory(lastTheory, self.flappybird.getWorldPositionObjects(), self.flappybird.getBirdVelocity(), self.flappybird.isDead(), turns)
                 if self.flappybird.isDead():
                     turnsDeadCounter = 1
             else:
                 starting = False
 
             if not self.flappybird.isDead():
-                theory = self.theoryManager.getTheory(self.flappybird.getWorldPositionObjects(), self.flappybird.getBirdVelocity(), self.flappybird.counter, turns)
+                theory = self.theoryManager.getTheory(self.flappybird.getWorldPositionObjects(), self.flappybird.getBirdVelocity(), turns)
                 self.printTheory(theory)
                 self.setLastTheory(theory)
                 lastTheory = theory     
@@ -94,8 +91,6 @@ class Agent:
             if turns % 50 == 0:
                 print(f"{bcolors.OKBLUE}Saving theories{bcolors.ENDC}")
                 self.theoryManager.saveTheories()
-            # if self.flappybird.isDead():
-            #     name = input("enter name")
             
     def setLastTheory(self, theory):
         self.lastNTheories.append(theory)

@@ -26,22 +26,16 @@ class TheoryDb:
         'isDead': currentWorldState.isDead,
         'velocity': currentWorldState.velocity,
         'currentPositions': currentPositionsForCurrentWorld,
-        'inGapHeight': currentWorldState.inGapHeight,
-        'crossingTheGap': currentWorldState.crossingTheGap,
         'farAwayFormWall': currentWorldState.farAwayFormWall,
         'distanceToGap': currentWorldState.distanceToGap,
-        'counter': currentWorldState.counter,
       },
       'expectedResult':  {
         'zone': expectedResult.zone,
         'isDead': expectedResult.isDead,
         'velocity': expectedResult.velocity,
         'currentPositions': currentPositionsForExpectedResult,
-        'inGapHeight': expectedResult.inGapHeight,
-        'crossingTheGap': expectedResult.crossingTheGap,
         'farAwayFormWall': expectedResult.farAwayFormWall,
         'distanceToGap': expectedResult.distanceToGap,
-        'counter': expectedResult.counter,
       },
       'action': theory.action,
       'successCount': theory.successCount,
@@ -62,6 +56,6 @@ class TheoryDb:
     with open(TheoryDb.FILE_PATH, 'r') as jsonFile:
       data = json.load(jsonFile)
       for jsonTheory in data['theories']:
-        savedTheories.append(Theory(jsonTheory['currentWorldState']['currentPositions'], jsonTheory['currentWorldState']['velocity'], jsonTheory['currentWorldState']['counter'], jsonTheory['action'], jsonTheory = jsonTheory))
+        savedTheories.append(Theory(jsonTheory['currentWorldState']['currentPositions'], jsonTheory['currentWorldState']['velocity'], jsonTheory['action'], jsonTheory = jsonTheory))
 
     return savedTheories

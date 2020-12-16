@@ -1,0 +1,2974 @@
+{
+  "theories": [
+    {
+      "currentWorldState": {
+        "zone": "border",
+        "isDead": null,
+        "velocity": 8.400000000000034,
+        "currentPositions": [
+          [
+            370,
+            432,
+            88,
+            500
+          ],
+          [
+            370,
+            -198,
+            90,
+            500
+          ],
+          [
+            65,
+            261,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 136,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "border",
+        "isDead": false,
+        "velocity": 8.400000000000034,
+        "currentPositions": [
+          [
+            368,
+            432,
+            88,
+            500
+          ],
+          [
+            368,
+            -198,
+            90,
+            500
+          ],
+          [
+            65,
+            252,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 145,
+        "counter": 0
+      },
+      "action": "holdKey",
+      "successCount": 5,
+      "useCount": 23,
+      "utility": -1
+    },
+    {
+      "currentWorldState": {
+        "zone": "border",
+        "isDead": null,
+        "velocity": -10.200000000000017,
+        "currentPositions": [
+          [
+            352,
+            405,
+            88,
+            500
+          ],
+          [
+            352,
+            -225,
+            90,
+            500
+          ],
+          [
+            65,
+            225,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 145,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "middle",
+        "isDead": false,
+        "velocity": 8.799999999999983,
+        "currentPositions": [
+          [
+            350,
+            405,
+            88,
+            500
+          ],
+          [
+            350,
+            -225,
+            90,
+            500
+          ],
+          [
+            65,
+            216,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 154,
+        "counter": 0
+      },
+      "action": "holdKey",
+      "successCount": 18,
+      "useCount": 22,
+      "utility": -1
+    },
+    {
+      "currentWorldState": {
+        "zone": "border",
+        "isDead": null,
+        "velocity": -12.0,
+        "currentPositions": [
+          [
+            246,
+            560,
+            88,
+            500
+          ],
+          [
+            246,
+            -70,
+            90,
+            500
+          ],
+          [
+            65,
+            387,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "careful",
+        "distanceToGap": 138,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "gapTop",
+        "isDead": false,
+        "velocity": -12.0,
+        "currentPositions": [
+          [
+            244,
+            560,
+            88,
+            500
+          ],
+          [
+            244,
+            -70,
+            90,
+            500
+          ],
+          [
+            65,
+            399,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "careful",
+        "distanceToGap": 126,
+        "counter": 0
+      },
+      "action": "releaseKey",
+      "successCount": 51,
+      "useCount": 238,
+      "utility": 4
+    },
+    {
+      "currentWorldState": {
+        "zone": "gapMiddle",
+        "isDead": null,
+        "velocity": 8.400000000000034,
+        "currentPositions": [
+          [
+            392,
+            432,
+            88,
+            500
+          ],
+          [
+            392,
+            -198,
+            90,
+            500
+          ],
+          [
+            65,
+            356,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": true,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 41,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "gapMiddle",
+        "isDead": false,
+        "velocity": 8.400000000000034,
+        "currentPositions": [
+          [
+            390,
+            432,
+            88,
+            500
+          ],
+          [
+            390,
+            -198,
+            90,
+            500
+          ],
+          [
+            65,
+            347,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": true,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 50,
+        "counter": 0
+      },
+      "action": "holdKey",
+      "successCount": 2,
+      "useCount": 8,
+      "utility": 0
+    },
+    {
+      "currentWorldState": {
+        "zone": "gapMiddle",
+        "isDead": null,
+        "velocity": 7.400000000000034,
+        "currentPositions": [
+          [
+            388,
+            432,
+            88,
+            500
+          ],
+          [
+            388,
+            -198,
+            90,
+            500
+          ],
+          [
+            65,
+            339,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": true,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 58,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "gapTop",
+        "isDead": false,
+        "velocity": 8.400000000000034,
+        "currentPositions": [
+          [
+            386,
+            432,
+            88,
+            500
+          ],
+          [
+            386,
+            -198,
+            90,
+            500
+          ],
+          [
+            65,
+            330,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": true,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 67,
+        "counter": 0
+      },
+      "action": "holdKey",
+      "successCount": 4,
+      "useCount": 7,
+      "utility": -1
+    },
+    {
+      "currentWorldState": {
+        "zone": "gapDanger",
+        "isDead": null,
+        "velocity": -13.599999999999795,
+        "currentPositions": [
+          [
+            314,
+            503,
+            88,
+            500
+          ],
+          [
+            314,
+            -127,
+            90,
+            500
+          ],
+          [
+            65,
+            445,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 23,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "gapBottom",
+        "isDead": false,
+        "velocity": 8.400000000000205,
+        "currentPositions": [
+          [
+            312,
+            503,
+            88,
+            500
+          ],
+          [
+            312,
+            -127,
+            90,
+            500
+          ],
+          [
+            65,
+            436,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 32,
+        "counter": 0
+      },
+      "action": "holdKey",
+      "successCount": 449,
+      "useCount": 477,
+      "utility": 7
+    },
+    {
+      "currentWorldState": {
+        "zone": "gapBottom",
+        "isDead": null,
+        "velocity": -5.599999999999966,
+        "currentPositions": [
+          [
+            394,
+            432,
+            88,
+            500
+          ],
+          [
+            394,
+            -198,
+            90,
+            500
+          ],
+          [
+            65,
+            365,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 32,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "gapMiddle",
+        "isDead": false,
+        "velocity": 8.400000000000034,
+        "currentPositions": [
+          [
+            392,
+            432,
+            88,
+            500
+          ],
+          [
+            392,
+            -198,
+            90,
+            500
+          ],
+          [
+            65,
+            356,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": true,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 41,
+        "counter": 0
+      },
+      "action": "holdKey",
+      "successCount": 3,
+      "useCount": 3,
+      "utility": 0
+    },
+    {
+      "currentWorldState": {
+        "zone": "gapDanger",
+        "isDead": null,
+        "velocity": -3.5999999999997954,
+        "currentPositions": [
+          [
+            246,
+            503,
+            88,
+            500
+          ],
+          [
+            246,
+            -127,
+            90,
+            500
+          ],
+          [
+            65,
+            443,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "careful",
+        "distanceToGap": 25,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "gapDanger",
+        "isDead": false,
+        "velocity": -3.799999999999784,
+        "currentPositions": [
+          [
+            244,
+            503,
+            88,
+            500
+          ],
+          [
+            244,
+            -127,
+            90,
+            500
+          ],
+          [
+            65,
+            446,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "careful",
+        "distanceToGap": 22,
+        "counter": 0
+      },
+      "action": "releaseKey",
+      "successCount": 1,
+      "useCount": 1,
+      "utility": -3
+    },
+    {
+      "currentWorldState": {
+        "zone": "gapDanger",
+        "isDead": null,
+        "velocity": -2.000000000000057,
+        "currentPositions": [
+          [
+            400,
+            434,
+            88,
+            500
+          ],
+          [
+            400,
+            -196,
+            90,
+            500
+          ],
+          [
+            65,
+            384,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 0,
+        "counter": 1
+      },
+      "expectedResult": {
+        "zone": "gapDanger",
+        "isDead": true,
+        "velocity": 8.999999999999943,
+        "currentPositions": [
+          [
+            398,
+            434,
+            88,
+            500
+          ],
+          [
+            398,
+            -196,
+            90,
+            500
+          ],
+          [
+            65,
+            375,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 24,
+        "counter": 1
+      },
+      "action": "holdKey",
+      "successCount": 1,
+      "useCount": 2,
+      "utility": 7
+    },
+    {
+      "currentWorldState": {
+        "zone": "gapTop",
+        "isDead": null,
+        "velocity": 7.400000000000034,
+        "currentPositions": [
+          [
+            372,
+            432,
+            88,
+            500
+          ],
+          [
+            372,
+            -198,
+            90,
+            500
+          ],
+          [
+            65,
+            270,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 127,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "border",
+        "isDead": false,
+        "velocity": 8.400000000000034,
+        "currentPositions": [
+          [
+            370,
+            432,
+            88,
+            500
+          ],
+          [
+            370,
+            -198,
+            90,
+            500
+          ],
+          [
+            65,
+            261,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 136,
+        "counter": 0
+      },
+      "action": "holdKey",
+      "successCount": 7,
+      "useCount": 48,
+      "utility": -1
+    },
+    {
+      "currentWorldState": {
+        "zone": "far",
+        "isDead": null,
+        "velocity": -12.59999999999934,
+        "currentPositions": [
+          [
+            368,
+            424,
+            88,
+            500
+          ],
+          [
+            368,
+            -206,
+            90,
+            500
+          ],
+          [
+            65,
+            724,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": -335,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "far",
+        "isDead": false,
+        "velocity": 9,
+        "currentPositions": [
+          [
+            398,
+            396,
+            88,
+            500
+          ],
+          [
+            398,
+            -234,
+            90,
+            500
+          ],
+          [
+            65,
+            41,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 320,
+        "counter": 0
+      },
+      "action": "holdKey",
+      "successCount": 3,
+      "useCount": 18,
+      "utility": -1
+    },
+    {
+      "currentWorldState": {
+        "zone": "far",
+        "isDead": null,
+        "velocity": 8.800000000000068,
+        "currentPositions": [
+          [
+            388,
+            417,
+            88,
+            500
+          ],
+          [
+            388,
+            -213,
+            90,
+            500
+          ],
+          [
+            65,
+            483,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": -101,
+        "counter": 2
+      },
+      "expectedResult": {
+        "zone": "far",
+        "isDead": false,
+        "velocity": 7.800000000000068,
+        "currentPositions": [
+          [
+            386,
+            417,
+            88,
+            500
+          ],
+          [
+            386,
+            -213,
+            90,
+            500
+          ],
+          [
+            65,
+            475,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": -93,
+        "counter": 2
+      },
+      "action": "releaseKey",
+      "successCount": 5,
+      "useCount": 11,
+      "utility": -1
+    },
+    {
+      "currentWorldState": {
+        "zone": "gapDanger",
+        "isDead": null,
+        "velocity": 8.200000000000443,
+        "currentPositions": [
+          [
+            380,
+            453,
+            88,
+            500
+          ],
+          [
+            380,
+            -177,
+            90,
+            500
+          ],
+          [
+            65,
+            403,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 0,
+        "counter": 5
+      },
+      "expectedResult": {
+        "zone": "gapDanger",
+        "isDead": false,
+        "velocity": 7.200000000000443,
+        "currentPositions": [
+          [
+            378,
+            453,
+            88,
+            500
+          ],
+          [
+            378,
+            -177,
+            90,
+            500
+          ],
+          [
+            65,
+            395,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 23,
+        "counter": 5
+      },
+      "action": "releaseKey",
+      "successCount": 2,
+      "useCount": 2,
+      "utility": -3
+    },
+    {
+      "currentWorldState": {
+        "zone": "border",
+        "isDead": null,
+        "velocity": 8.200000000000443,
+        "currentPositions": [
+          [
+            384,
+            453,
+            88,
+            500
+          ],
+          [
+            384,
+            -177,
+            90,
+            500
+          ],
+          [
+            65,
+            421,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": -3,
+        "counter": 5
+      },
+      "expectedResult": {
+        "zone": "gapDanger",
+        "isDead": false,
+        "velocity": 8.200000000000443,
+        "currentPositions": [
+          [
+            382,
+            453,
+            88,
+            500
+          ],
+          [
+            382,
+            -177,
+            90,
+            500
+          ],
+          [
+            65,
+            412,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 6,
+        "counter": 5
+      },
+      "action": "holdKey",
+      "successCount": 2,
+      "useCount": 9,
+      "utility": 7
+    },
+    {
+      "currentWorldState": {
+        "zone": "far",
+        "isDead": null,
+        "velocity": 8.200000000000443,
+        "currentPositions": [
+          [
+            394,
+            453,
+            88,
+            500
+          ],
+          [
+            394,
+            -177,
+            90,
+            500
+          ],
+          [
+            65,
+            464,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": -46,
+        "counter": 5
+      },
+      "expectedResult": {
+        "zone": "middle",
+        "isDead": false,
+        "velocity": 8.200000000000443,
+        "currentPositions": [
+          [
+            392,
+            453,
+            88,
+            500
+          ],
+          [
+            392,
+            -177,
+            90,
+            500
+          ],
+          [
+            65,
+            455,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": -37,
+        "counter": 5
+      },
+      "action": "holdKey",
+      "successCount": 4,
+      "useCount": 23,
+      "utility": 2
+    },
+    {
+      "currentWorldState": {
+        "zone": "far",
+        "isDead": null,
+        "velocity": 8.200000000000443,
+        "currentPositions": [
+          [
+            394,
+            453,
+            88,
+            500
+          ],
+          [
+            394,
+            -177,
+            90,
+            500
+          ],
+          [
+            65,
+            464,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": -46,
+        "counter": 5
+      },
+      "expectedResult": {
+        "zone": "middle",
+        "isDead": false,
+        "velocity": 8.20000000000016,
+        "currentPositions": [
+          [
+            394,
+            388,
+            88,
+            500
+          ],
+          [
+            394,
+            -242,
+            90,
+            500
+          ],
+          [
+            65,
+            388,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": -35,
+        "counter": 1
+      },
+      "action": "holdKey",
+      "successCount": 1,
+      "useCount": 5,
+      "utility": -1
+    },
+    {
+      "currentWorldState": {
+        "zone": "middle",
+        "isDead": null,
+        "velocity": 8.200000000000443,
+        "currentPositions": [
+          [
+            392,
+            453,
+            88,
+            500
+          ],
+          [
+            392,
+            -177,
+            90,
+            500
+          ],
+          [
+            65,
+            455,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": -37,
+        "counter": 5
+      },
+      "expectedResult": {
+        "zone": "middle",
+        "isDead": false,
+        "velocity": 7.200000000000443,
+        "currentPositions": [
+          [
+            390,
+            453,
+            88,
+            500
+          ],
+          [
+            390,
+            -177,
+            90,
+            500
+          ],
+          [
+            65,
+            447,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": -29,
+        "counter": 5
+      },
+      "action": "releaseKey",
+      "successCount": 3,
+      "useCount": 3,
+      "utility": -1
+    },
+    {
+      "currentWorldState": {
+        "zone": "far",
+        "isDead": null,
+        "velocity": -1.7999999999995566,
+        "currentPositions": [
+          [
+            398,
+            453,
+            88,
+            500
+          ],
+          [
+            398,
+            -177,
+            90,
+            500
+          ],
+          [
+            65,
+            482,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": -64,
+        "counter": 5
+      },
+      "expectedResult": {
+        "zone": "far",
+        "isDead": false,
+        "velocity": 8.200000000000443,
+        "currentPositions": [
+          [
+            396,
+            453,
+            88,
+            500
+          ],
+          [
+            396,
+            -177,
+            90,
+            500
+          ],
+          [
+            65,
+            473,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": -55,
+        "counter": 5
+      },
+      "action": "holdKey",
+      "successCount": 8,
+      "useCount": 21,
+      "utility": 1
+    },
+    {
+      "currentWorldState": {
+        "zone": "middle",
+        "isDead": null,
+        "velocity": 7.800000000000068,
+        "currentPositions": [
+          [
+            370,
+            417,
+            88,
+            500
+          ],
+          [
+            370,
+            -213,
+            90,
+            500
+          ],
+          [
+            65,
+            412,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": -30,
+        "counter": 2
+      },
+      "expectedResult": {
+        "zone": "middle",
+        "isDead": false,
+        "velocity": 8.800000000000068,
+        "currentPositions": [
+          [
+            368,
+            417,
+            88,
+            500
+          ],
+          [
+            368,
+            -213,
+            90,
+            500
+          ],
+          [
+            65,
+            403,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": -21,
+        "counter": 2
+      },
+      "action": "holdKey",
+      "successCount": 4,
+      "useCount": 8,
+      "utility": 2
+    },
+    {
+      "currentWorldState": {
+        "zone": "middle",
+        "isDead": null,
+        "velocity": 7.200000000000443,
+        "currentPositions": [
+          [
+            390,
+            453,
+            88,
+            500
+          ],
+          [
+            390,
+            -177,
+            90,
+            500
+          ],
+          [
+            65,
+            447,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": -29,
+        "counter": 5
+      },
+      "expectedResult": {
+        "zone": "border",
+        "isDead": false,
+        "velocity": 8.200000000000443,
+        "currentPositions": [
+          [
+            388,
+            453,
+            88,
+            500
+          ],
+          [
+            388,
+            -177,
+            90,
+            500
+          ],
+          [
+            65,
+            438,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": -20,
+        "counter": 5
+      },
+      "action": "holdKey",
+      "successCount": 5,
+      "useCount": 9,
+      "utility": 3
+    },
+    {
+      "currentWorldState": {
+        "zone": "border",
+        "isDead": null,
+        "velocity": 8.200000000000443,
+        "currentPositions": [
+          [
+            388,
+            453,
+            88,
+            500
+          ],
+          [
+            388,
+            -177,
+            90,
+            500
+          ],
+          [
+            65,
+            438,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": -20,
+        "counter": 5
+      },
+      "expectedResult": {
+        "zone": "border",
+        "isDead": false,
+        "velocity": 7.200000000000443,
+        "currentPositions": [
+          [
+            386,
+            453,
+            88,
+            500
+          ],
+          [
+            386,
+            -177,
+            90,
+            500
+          ],
+          [
+            65,
+            430,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": -12,
+        "counter": 5
+      },
+      "action": "releaseKey",
+      "successCount": 2,
+      "useCount": 5,
+      "utility": -1
+    },
+    {
+      "currentWorldState": {
+        "zone": "border",
+        "isDead": null,
+        "velocity": 7.800000000000239,
+        "currentPositions": [
+          [
+            388,
+            437,
+            88,
+            500
+          ],
+          [
+            388,
+            -193,
+            90,
+            500
+          ],
+          [
+            65,
+            409,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": -7,
+        "counter": 2
+      },
+      "expectedResult": {
+        "zone": "gapDanger",
+        "isDead": false,
+        "velocity": 6.800000000000239,
+        "currentPositions": [
+          [
+            386,
+            437,
+            88,
+            500
+          ],
+          [
+            386,
+            -193,
+            90,
+            500
+          ],
+          [
+            65,
+            402,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 0,
+        "counter": 2
+      },
+      "action": "releaseKey",
+      "successCount": 1,
+      "useCount": 2,
+      "utility": -3
+    },
+    {
+      "currentWorldState": {
+        "zone": "gapDanger",
+        "isDead": null,
+        "velocity": 6.800000000000239,
+        "currentPositions": [
+          [
+            386,
+            437,
+            88,
+            500
+          ],
+          [
+            386,
+            -193,
+            90,
+            500
+          ],
+          [
+            65,
+            402,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 0,
+        "counter": 2
+      },
+      "expectedResult": {
+        "zone": "gapDanger",
+        "isDead": false,
+        "velocity": 8.800000000000239,
+        "currentPositions": [
+          [
+            384,
+            437,
+            88,
+            500
+          ],
+          [
+            384,
+            -193,
+            90,
+            500
+          ],
+          [
+            65,
+            393,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 9,
+        "counter": 2
+      },
+      "action": "holdKey",
+      "successCount": 1,
+      "useCount": 1,
+      "utility": 7
+    },
+    {
+      "currentWorldState": {
+        "zone": "far",
+        "isDead": null,
+        "velocity": 8.200000000000443,
+        "currentPositions": [
+          [
+            394,
+            453,
+            88,
+            500
+          ],
+          [
+            394,
+            -177,
+            90,
+            500
+          ],
+          [
+            65,
+            464,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": -46,
+        "counter": 5
+      },
+      "expectedResult": {
+        "zone": "far",
+        "isDead": true,
+        "velocity": 9,
+        "currentPositions": [
+          [
+            398,
+            426,
+            88,
+            500
+          ],
+          [
+            398,
+            -204,
+            90,
+            500
+          ],
+          [
+            65,
+            41,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 350,
+        "counter": 0
+      },
+      "action": "holdKey",
+      "successCount": 0,
+      "useCount": 0,
+      "utility": -1
+    },
+    {
+      "currentWorldState": {
+        "zone": "middle",
+        "isDead": null,
+        "velocity": -3.4000000000000625,
+        "currentPositions": [
+          [
+            134,
+            432,
+            88,
+            500
+          ],
+          [
+            134,
+            -198,
+            90,
+            500
+          ],
+          [
+            65,
+            236,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "danger",
+        "distanceToGap": 161,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "far",
+        "isDead": false,
+        "velocity": 8.599999999999937,
+        "currentPositions": [
+          [
+            132,
+            432,
+            88,
+            500
+          ],
+          [
+            132,
+            -198,
+            90,
+            500
+          ],
+          [
+            65,
+            227,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "danger",
+        "distanceToGap": 170,
+        "counter": 0
+      },
+      "action": "holdKey",
+      "successCount": 37,
+      "useCount": 82,
+      "utility": -1
+    },
+    {
+      "currentWorldState": {
+        "zone": "border",
+        "isDead": null,
+        "velocity": 7.200000000000443,
+        "currentPositions": [
+          [
+            386,
+            453,
+            88,
+            500
+          ],
+          [
+            386,
+            -177,
+            90,
+            500
+          ],
+          [
+            65,
+            430,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": -12,
+        "counter": 5
+      },
+      "expectedResult": {
+        "zone": "border",
+        "isDead": false,
+        "velocity": 8.200000000000443,
+        "currentPositions": [
+          [
+            384,
+            453,
+            88,
+            500
+          ],
+          [
+            384,
+            -177,
+            90,
+            500
+          ],
+          [
+            65,
+            421,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": -3,
+        "counter": 5
+      },
+      "action": "holdKey",
+      "successCount": 6,
+      "useCount": 9,
+      "utility": 3
+    },
+    {
+      "currentWorldState": {
+        "zone": "border",
+        "isDead": null,
+        "velocity": 8.200000000000387,
+        "currentPositions": [
+          [
+            390,
+            402,
+            88,
+            500
+          ],
+          [
+            390,
+            -228,
+            90,
+            500
+          ],
+          [
+            65,
+            370,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": -3,
+        "counter": 3
+      },
+      "expectedResult": {
+        "zone": "gapDanger",
+        "isDead": false,
+        "velocity": 7.2000000000003865,
+        "currentPositions": [
+          [
+            388,
+            402,
+            88,
+            500
+          ],
+          [
+            388,
+            -228,
+            90,
+            500
+          ],
+          [
+            65,
+            362,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 5,
+        "counter": 3
+      },
+      "action": "releaseKey",
+      "successCount": 2,
+      "useCount": 4,
+      "utility": -3
+    },
+    {
+      "currentWorldState": {
+        "zone": "far",
+        "isDead": null,
+        "velocity": -10.79999999999984,
+        "currentPositions": [
+          [
+            330,
+            504,
+            88,
+            500
+          ],
+          [
+            330,
+            -126,
+            90,
+            500
+          ],
+          [
+            65,
+            729,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": -260,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "far",
+        "isDead": false,
+        "velocity": -5,
+        "currentPositions": [
+          [
+            398,
+            429,
+            88,
+            500
+          ],
+          [
+            398,
+            -201,
+            90,
+            500
+          ],
+          [
+            65,
+            55,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 339,
+        "counter": 0
+      },
+      "action": "releaseKey",
+      "successCount": 10,
+      "useCount": 19,
+      "utility": 1
+    },
+    {
+      "currentWorldState": {
+        "zone": "gapBottom",
+        "isDead": null,
+        "velocity": -2.5999999999997954,
+        "currentPositions": [
+          [
+            256,
+            503,
+            88,
+            500
+          ],
+          [
+            256,
+            -127,
+            90,
+            500
+          ],
+          [
+            65,
+            430,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": true,
+        "crossingTheGap": false,
+        "farAwayFormWall": "careful",
+        "distanceToGap": 38,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "gapBottom",
+        "isDead": false,
+        "velocity": -2.799999999999784,
+        "currentPositions": [
+          [
+            254,
+            503,
+            88,
+            500
+          ],
+          [
+            254,
+            -127,
+            90,
+            500
+          ],
+          [
+            65,
+            432,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": true,
+        "crossingTheGap": false,
+        "farAwayFormWall": "careful",
+        "distanceToGap": 36,
+        "counter": 0
+      },
+      "action": "releaseKey",
+      "successCount": 2384,
+      "useCount": 3362,
+      "utility": 7
+    },
+    {
+      "currentWorldState": {
+        "zone": "gapTop",
+        "isDead": null,
+        "velocity": 8.400000000000034,
+        "currentPositions": [
+          [
+            386,
+            432,
+            88,
+            500
+          ],
+          [
+            386,
+            -198,
+            90,
+            500
+          ],
+          [
+            65,
+            330,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": true,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 67,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "gapTop",
+        "isDead": false,
+        "velocity": 7.400000000000034,
+        "currentPositions": [
+          [
+            384,
+            432,
+            88,
+            500
+          ],
+          [
+            384,
+            -198,
+            90,
+            500
+          ],
+          [
+            65,
+            322,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": true,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 75,
+        "counter": 0
+      },
+      "action": "releaseKey",
+      "successCount": 3275,
+      "useCount": 3811,
+      "utility": 4
+    },
+    {
+      "currentWorldState": {
+        "zone": "gapBottom",
+        "isDead": null,
+        "velocity": -14.199999999999818,
+        "currentPositions": [
+          [
+            316,
+            503,
+            88,
+            500
+          ],
+          [
+            316,
+            -127,
+            90,
+            500
+          ],
+          [
+            65,
+            432,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": true,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 36,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "gapDanger",
+        "isDead": false,
+        "velocity": -13.599999999999795,
+        "currentPositions": [
+          [
+            314,
+            503,
+            88,
+            500
+          ],
+          [
+            314,
+            -127,
+            90,
+            500
+          ],
+          [
+            65,
+            445,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 23,
+        "counter": 0
+      },
+      "action": "releaseKey",
+      "successCount": 215,
+      "useCount": 1683,
+      "utility": -3
+    },
+    {
+      "currentWorldState": {
+        "zone": "gapBottom",
+        "isDead": null,
+        "velocity": -2.5999999999997954,
+        "currentPositions": [
+          [
+            256,
+            503,
+            88,
+            500
+          ],
+          [
+            256,
+            -127,
+            90,
+            500
+          ],
+          [
+            65,
+            430,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": true,
+        "crossingTheGap": false,
+        "farAwayFormWall": "careful",
+        "distanceToGap": 38,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "gapMiddle",
+        "isDead": false,
+        "velocity": 7.200000000000443,
+        "currentPositions": [
+          [
+            -44,
+            558,
+            88,
+            500
+          ],
+          [
+            -44,
+            -72,
+            90,
+            500
+          ],
+          [
+            65,
+            480,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": true,
+        "crossingTheGap": false,
+        "farAwayFormWall": "danger",
+        "distanceToGap": 43,
+        "counter": 4
+      },
+      "action": "releaseKey",
+      "successCount": 185,
+      "useCount": 1384,
+      "utility": 0
+    },
+    {
+      "currentWorldState": {
+        "zone": "gapMiddle",
+        "isDead": null,
+        "velocity": 8.400000000000034,
+        "currentPositions": [
+          [
+            390,
+            432,
+            88,
+            500
+          ],
+          [
+            390,
+            -198,
+            90,
+            500
+          ],
+          [
+            65,
+            347,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": true,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 50,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "gapMiddle",
+        "isDead": false,
+        "velocity": 7.400000000000034,
+        "currentPositions": [
+          [
+            388,
+            432,
+            88,
+            500
+          ],
+          [
+            388,
+            -198,
+            90,
+            500
+          ],
+          [
+            65,
+            339,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": true,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 58,
+        "counter": 0
+      },
+      "action": "releaseKey",
+      "successCount": 1471,
+      "useCount": 3143,
+      "utility": 0
+    },
+    {
+      "currentWorldState": {
+        "zone": "gapMiddle",
+        "isDead": null,
+        "velocity": -2.799999999999841,
+        "currentPositions": [
+          [
+            204,
+            424,
+            88,
+            500
+          ],
+          [
+            204,
+            -206,
+            90,
+            500
+          ],
+          [
+            65,
+            324,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": true,
+        "crossingTheGap": false,
+        "farAwayFormWall": "careful",
+        "distanceToGap": 65,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "gapMiddle",
+        "isDead": false,
+        "velocity": -3.3999999999998636,
+        "currentPositions": [
+          [
+            202,
+            424,
+            88,
+            500
+          ],
+          [
+            202,
+            -206,
+            90,
+            500
+          ],
+          [
+            65,
+            327,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": true,
+        "crossingTheGap": false,
+        "farAwayFormWall": "careful",
+        "distanceToGap": 62,
+        "counter": 0
+      },
+      "action": "releaseKey",
+      "successCount": 2447,
+      "useCount": 6277,
+      "utility": 7
+    },
+    {
+      "currentWorldState": {
+        "zone": "gapMiddle",
+        "isDead": null,
+        "velocity": -2.799999999999841,
+        "currentPositions": [
+          [
+            204,
+            424,
+            88,
+            500
+          ],
+          [
+            204,
+            -206,
+            90,
+            500
+          ],
+          [
+            65,
+            324,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": true,
+        "crossingTheGap": false,
+        "farAwayFormWall": "careful",
+        "distanceToGap": 65,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "gapTop",
+        "isDead": false,
+        "velocity": 2.4000000000005457,
+        "currentPositions": [
+          [
+            -78,
+            455,
+            88,
+            500
+          ],
+          [
+            -78,
+            -175,
+            90,
+            500
+          ],
+          [
+            65,
+            354,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": true,
+        "crossingTheGap": false,
+        "farAwayFormWall": "danger",
+        "distanceToGap": 66,
+        "counter": 2
+      },
+      "action": "releaseKey",
+      "successCount": 0,
+      "useCount": 0,
+      "utility": 4
+    },
+    {
+      "currentWorldState": {
+        "zone": "gapTop",
+        "isDead": null,
+        "velocity": 2.0000000000002274,
+        "currentPositions": [
+          [
+            172,
+            503,
+            88,
+            500
+          ],
+          [
+            172,
+            -127,
+            90,
+            500
+          ],
+          [
+            65,
+            400,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": true,
+        "crossingTheGap": false,
+        "farAwayFormWall": "danger",
+        "distanceToGap": 68,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "gapTop",
+        "isDead": false,
+        "velocity": 8.000000000000227,
+        "currentPositions": [
+          [
+            170,
+            503,
+            88,
+            500
+          ],
+          [
+            170,
+            -127,
+            90,
+            500
+          ],
+          [
+            65,
+            391,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "danger",
+        "distanceToGap": 77,
+        "counter": 0
+      },
+      "action": "holdKey",
+      "successCount": 33,
+      "useCount": 42,
+      "utility": -1
+    },
+    {
+      "currentWorldState": {
+        "zone": "gapTop",
+        "isDead": null,
+        "velocity": 8.400000000000034,
+        "currentPositions": [
+          [
+            386,
+            432,
+            88,
+            500
+          ],
+          [
+            386,
+            -198,
+            90,
+            500
+          ],
+          [
+            65,
+            330,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": true,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 67,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "border",
+        "isDead": false,
+        "velocity": 6.400000000000546,
+        "currentPositions": [
+          [
+            398,
+            497,
+            88,
+            500
+          ],
+          [
+            398,
+            -133,
+            90,
+            500
+          ],
+          [
+            65,
+            330,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 132,
+        "counter": 3
+      },
+      "action": "releaseKey",
+      "successCount": 0,
+      "useCount": 0,
+      "utility": 3
+    },
+    {
+      "currentWorldState": {
+        "zone": "border",
+        "isDead": null,
+        "velocity": -6.599999999999852,
+        "currentPositions": [
+          [
+            184,
+            560,
+            88,
+            500
+          ],
+          [
+            184,
+            -70,
+            90,
+            500
+          ],
+          [
+            65,
+            378,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "careful",
+        "distanceToGap": 147,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "border",
+        "isDead": false,
+        "velocity": -6.799999999999841,
+        "currentPositions": [
+          [
+            182,
+            560,
+            88,
+            500
+          ],
+          [
+            182,
+            -70,
+            90,
+            500
+          ],
+          [
+            65,
+            384,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "careful",
+        "distanceToGap": 141,
+        "counter": 0
+      },
+      "action": "releaseKey",
+      "successCount": 88,
+      "useCount": 133,
+      "utility": 3
+    },
+    {
+      "currentWorldState": {
+        "zone": "border",
+        "isDead": null,
+        "velocity": -12.0,
+        "currentPositions": [
+          [
+            246,
+            560,
+            88,
+            500
+          ],
+          [
+            246,
+            -70,
+            90,
+            500
+          ],
+          [
+            65,
+            387,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "careful",
+        "distanceToGap": 138,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "border",
+        "isDead": false,
+        "velocity": 5.400000000000546,
+        "currentPositions": [
+          [
+            396,
+            497,
+            88,
+            500
+          ],
+          [
+            396,
+            -133,
+            90,
+            500
+          ],
+          [
+            65,
+            324,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 138,
+        "counter": 3
+      },
+      "action": "releaseKey",
+      "successCount": 3,
+      "useCount": 4,
+      "utility": -1
+    },
+    {
+      "currentWorldState": {
+        "zone": "border",
+        "isDead": null,
+        "velocity": -12.0,
+        "currentPositions": [
+          [
+            246,
+            560,
+            88,
+            500
+          ],
+          [
+            246,
+            -70,
+            90,
+            500
+          ],
+          [
+            65,
+            387,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "careful",
+        "distanceToGap": 138,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "middle",
+        "isDead": false,
+        "velocity": 1.4000000000005457,
+        "currentPositions": [
+          [
+            388,
+            497,
+            88,
+            500
+          ],
+          [
+            388,
+            -133,
+            90,
+            500
+          ],
+          [
+            65,
+            310,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 152,
+        "counter": 3
+      },
+      "action": "releaseKey",
+      "successCount": 0,
+      "useCount": 0,
+      "utility": -1
+    },
+    {
+      "currentWorldState": {
+        "zone": "middle",
+        "isDead": null,
+        "velocity": 6.400000000000034,
+        "currentPositions": [
+          [
+            364,
+            432,
+            88,
+            500
+          ],
+          [
+            364,
+            -198,
+            90,
+            500
+          ],
+          [
+            65,
+            237,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 160,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "middle",
+        "isDead": false,
+        "velocity": 8.400000000000034,
+        "currentPositions": [
+          [
+            362,
+            432,
+            88,
+            500
+          ],
+          [
+            362,
+            -198,
+            90,
+            500
+          ],
+          [
+            65,
+            228,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 169,
+        "counter": 0
+      },
+      "action": "holdKey",
+      "successCount": 23,
+      "useCount": 84,
+      "utility": -1
+    },
+    {
+      "currentWorldState": {
+        "zone": "middle",
+        "isDead": null,
+        "velocity": 7.400000000000034,
+        "currentPositions": [
+          [
+            366,
+            432,
+            88,
+            500
+          ],
+          [
+            366,
+            -198,
+            90,
+            500
+          ],
+          [
+            65,
+            244,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 153,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "middle",
+        "isDead": false,
+        "velocity": 6.400000000000034,
+        "currentPositions": [
+          [
+            364,
+            432,
+            88,
+            500
+          ],
+          [
+            364,
+            -198,
+            90,
+            500
+          ],
+          [
+            65,
+            237,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 160,
+        "counter": 0
+      },
+      "action": "releaseKey",
+      "successCount": 324,
+      "useCount": 443,
+      "utility": 2
+    },
+    {
+      "currentWorldState": {
+        "zone": "middle",
+        "isDead": null,
+        "velocity": 7.400000000000034,
+        "currentPositions": [
+          [
+            366,
+            432,
+            88,
+            500
+          ],
+          [
+            366,
+            -198,
+            90,
+            500
+          ],
+          [
+            65,
+            244,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 153,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "far",
+        "isDead": false,
+        "velocity": 6.400000000000546,
+        "currentPositions": [
+          [
+            382,
+            497,
+            88,
+            500
+          ],
+          [
+            382,
+            -133,
+            90,
+            500
+          ],
+          [
+            65,
+            286,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 176,
+        "counter": 3
+      },
+      "action": "releaseKey",
+      "successCount": 0,
+      "useCount": 0,
+      "utility": 1
+    },
+    {
+      "currentWorldState": {
+        "zone": "far",
+        "isDead": null,
+        "velocity": 6.400000000000034,
+        "currentPositions": [
+          [
+            358,
+            432,
+            88,
+            500
+          ],
+          [
+            358,
+            -198,
+            90,
+            500
+          ],
+          [
+            65,
+            213,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 184,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "far",
+        "isDead": false,
+        "velocity": 8.400000000000034,
+        "currentPositions": [
+          [
+            356,
+            432,
+            88,
+            500
+          ],
+          [
+            356,
+            -198,
+            90,
+            500
+          ],
+          [
+            65,
+            204,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 193,
+        "counter": 0
+      },
+      "action": "holdKey",
+      "successCount": 58,
+      "useCount": 95,
+      "utility": -1
+    },
+    {
+      "currentWorldState": {
+        "zone": "far",
+        "isDead": null,
+        "velocity": 7.400000000000034,
+        "currentPositions": [
+          [
+            360,
+            432,
+            88,
+            500
+          ],
+          [
+            360,
+            -198,
+            90,
+            500
+          ],
+          [
+            65,
+            220,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 177,
+        "counter": 0
+      },
+      "expectedResult": {
+        "zone": "far",
+        "isDead": false,
+        "velocity": 6.400000000000034,
+        "currentPositions": [
+          [
+            358,
+            432,
+            88,
+            500
+          ],
+          [
+            358,
+            -198,
+            90,
+            500
+          ],
+          [
+            65,
+            213,
+            50,
+            50
+          ]
+        ],
+        "inGapHeight": false,
+        "crossingTheGap": false,
+        "farAwayFormWall": "safe",
+        "distanceToGap": 184,
+        "counter": 0
+      },
+      "action": "releaseKey",
+      "successCount": 7524,
+      "useCount": 7855,
+      "utility": 1
+    }
+  ]
+}

@@ -2,8 +2,6 @@ import pygame
 from src.distance import Distance, Zones
 from src.actions import Actions
 
-GAP_SIZE = 130
-
 class UtilityCalculator:
     def __init__(self, currentWorldState, worldResult, action):
         self.currentWorldState = currentWorldState
@@ -49,9 +47,6 @@ class UtilityCalculator:
                     return -3
             else:
                 return 1
-        else:
-            m = input("holis")
-            print(m)
 
 
     def isVelocityHelping(self, action):
@@ -88,7 +83,7 @@ class UtilityCalculator:
                 return True
             else:
                 return False
-        elif self.worldResult.crossingTheGap or Zones().inGapZones(self.worldResult.zone):
+        elif Zones().inGapZones(self.worldResult.zone):
             if isReducingVelocity(self.currentWorldState.velocity, self.worldResult.velocity) and self.worldResult.zone == Zones.GAP_TOP:
                 return True
             elif not isReducingVelocity(self.currentWorldState.velocity, self.worldResult.velocity) and self.worldResult.zone == Zones.GAP_BOTTOM:
